@@ -1,0 +1,53 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h1> PASSWORD GENERATOR WEBSITE </h1>
+
+    <!-- 
+        the extra thing we made here insted of action = "password" because we wan't in our website 
+
+        url look like http://127.0.0.1:8000/generated_password?length=7 just to make this as generated_password
+
+        we did this thing so in url also we need to change the things by adding name='password' extra argument
+    -->
+
+    <form action="{% url 'password' %}"> 
+        <br> 
+        <select name="length"> 
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select> length
+        <br>
+        <br>
+        <input type="checkbox" name="uppercase"> uppercase
+        <br>
+
+        <br>
+        <input type="checkbox" name="numbers"> numbers
+        <br>
+
+        <br>
+        <input type="checkbox" name="special"> special charectors
+        <br>
+        <br>
+
+        <input type="submit" value="Generate Password" class="btn btn-dark">
+    </form>
+
+    <br>
+    <br>
+
+    <a href="{% url 'about' %}" class="btn btn-success">
+        about
+    </a>
+
+</div>
+
+
+    
+
